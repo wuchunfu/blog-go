@@ -1,0 +1,56 @@
+[Gin]
+AppMode = "debug"
+Port = ":前台端口"
+BackendPort = ":后台端口"
+JwtKey = "jwt加密密钥"
+ExpireTime = 24 # 过期时间，单位为小时
+MDPath = "./web/markdown/"
+MDUrlPath = "web/markdown/"
+
+[Mysql]
+Db = "mysql"
+Host = "127.0.0.1"
+Port = "3306"
+Username = "数据库名字"
+Password = "数据库密码"
+Dbname = "数据库"
+
+[GORM]
+LogMode  = 4 # gorm日志等级
+TablePrefix = "" # 数据表名前缀
+SingularTable = true
+SkipDefaultTransaction = false
+DisableForeignKeyConstraintWhenMigrating = true
+MaxIdleConns = 10
+MaxOpenConns = 10
+SetConnMaxLifetime = 8
+
+[TencentCloud] # 我用的腾讯云对象存储
+Url = "对象存储网站"
+SecretID = "密钥ID"
+SecretKey = "密钥Key"
+ArticlePath = "article/" # 存储分类
+AlbumPath = "album/"
+UserPath = "user/"
+TalkPath = "talk/"
+
+[Redis]
+Addr = "localhost:6379"
+Password = "redis密码"
+DB = 0
+MaxIdle = 10
+Network = "tcp"
+
+[Session]
+Name = "session名字"
+Salt = "加密盐值"
+MaxAge = 600 # 以秒为单位
+
+[EMail]
+Sender = "邮件发送者"
+AuthCode = "授权码"
+Title = "邮件标题"
+BodyType = "邮件内容类型"
+SMTPAddr = "smtp 地址"
+SMTPPort = 25 # smtp端口
+ExpireTime = 15 # 过期时间，单位为分钟
