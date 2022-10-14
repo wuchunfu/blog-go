@@ -84,7 +84,7 @@ func (*ArticleDao) ArticleList(current int) (list []model.ArticleHomeDTO) {
 	table := db.Table("article").
 		Select("id,article_cover,article_title,article_content,type,is_top,create_time,category_id").
 		Where("is_delete = 0 AND status = 1").
-		Order("is_top,id desc").
+		Order("is_top desc, id desc").
 		Limit(10).Offset(offset)
 
 	db.Table("(?) a", table).
@@ -94,7 +94,7 @@ func (*ArticleDao) ArticleList(current int) (list []model.ArticleHomeDTO) {
 			return db2.Select("id", "tag_name")
 		}).
 		Joins("LEFT JOIN category c ON a.category_id = c.id").
-		Order("a.is_top,a.id desc").
+		Order("a.is_top desc, a.id desc").
 		Find(&list)
 
 	return
