@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="ubuntu@43.138.227.253:22" type="ssh/sftp" uuid="9170305d-b140-4d2e-8480-86ac98ac26c9">
+        <config>
+          <option name="projectRootOnTarget" value="/home/ubuntu/go/project/blog" />
+          <option name="serverName" value="ubuntu@43.138.227.253:22 password" />
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="goPath" value="/home/ubuntu/go" />
+            <option name="goRoot" value="/usr/local/go/bin/go" />
+            <option name="goVersion" value="go1.19 linux/amd64" />
+          </config>
+        </ContributedStateBase>
+      </target>
+      <target name="ubuntu@43.138.227.253:222" type="ssh/sftp" uuid="8acd9050-f049-4cce-9506-0d2703c08b4c">
+        <config>
+          <option name="projectRootOnTarget" value="/home/ubuntu/go/project/blog" />
+          <option name="serverName" value="ubuntu@43.138.227.253:22 password" />
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="goPath" value="/home/ubuntu/go" />
+            <option name="goRoot" value="/usr/local/go/bin/go" />
+            <option name="goVersion" value="go1.19 linux/amd64" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>
