@@ -56,7 +56,7 @@ func (*ArticleDao) BackendArticleList(condition model.Condition) (list []model.A
 
 	table := db.Table("article").Select("id", "article_cover", "article_title",
 		"type", "is_top", "is_delete", "status", "create_time", "category_id").
-		Order("is_top,id desc").Where(query, args...).Limit(condition.Size).Offset(offset)
+		Order("is_top desc,id desc").Where(query, args...).Limit(condition.Size).Offset(offset)
 
 	db.Table("(?) a", table).Select("a.id", "article_cover", "article_title",
 		"type", "is_top", "a.is_delete", "a.status", "a.create_time", "category_name").
@@ -64,7 +64,7 @@ func (*ArticleDao) BackendArticleList(condition model.Condition) (list []model.A
 			return db2.Select("id", "tag_name")
 		}). // 尤其要注意这里是属性名字而不是属性类型的名字！！！
 		Joins("LEFT JOIN category c ON a.category_id = c.id").
-		Order("is_top,a.id desc").
+		Order("is_top desc, a.id desc").
 		Find(&list)
 
 	return
