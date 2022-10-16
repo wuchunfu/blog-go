@@ -18,10 +18,10 @@ func (*UniqueViewService) UniqueViewList() []model.UniqueViewDTO {
 // 定时任务，统计每天用户量保存到mysql
 func (*UniqueViewService) saveUniqueView() {
 	count := rdb.SCard(UniqueVisitor).Val()
-	uniqueView := model.UniqueView{
+	dao.Create(&model.UniqueView{
 		ViewsCount: int(count),
-	}
-	dao.Create(&uniqueView)
+		CreateTime: time.Now().AddDate(0, 0, -1), // 主动保存时间
+	})
 }
 
 // 定时任务，清空每天用户量和游客分布区域

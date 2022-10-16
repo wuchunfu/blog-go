@@ -18,7 +18,6 @@ func newWithSeconds() *corn.Cron {
 func scheduled() {
 	c := newWithSeconds()
 	c.AddFunc("0 0 * * * ?", userService.statisticalUserArea)
-	//c.AddFunc("*/5 * * * * *", userService.statisticalUserArea)
 	c.AddFunc("0 0 0 * * ?", uniqueService.saveUniqueView)
 	c.AddFunc("0 1 0 * * ?", uniqueService.clear)
 	c.Start()

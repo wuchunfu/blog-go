@@ -252,6 +252,7 @@ func updateArticleViewsCount(c *gin.Context, articleId int) {
 			rdb.ZIncrBy(ArticleViewsCount, 1, strconv.Itoa(articleId))
 		}
 	}
+	session.Save()
 }
 
 func getViewCountMap(rz []redis.Z) map[int]int {

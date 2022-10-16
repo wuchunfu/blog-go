@@ -1,8 +1,12 @@
 package model
 
+import "time"
+
 type UniqueView struct {
-	Universal
-	ViewsCount int `json:"viewsCount"`
+	ID         int       `json:"id" gorm:"primaryKey;autoIncrement"`
+	CreateTime time.Time `json:"createTime"`
+	UpdateTime time.Time `json:"updateTime" gorm:"autoUpdateTime"`
+	ViewsCount int       `json:"viewsCount"`
 }
 
 type UniqueViewDTO struct {
