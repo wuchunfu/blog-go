@@ -117,8 +117,6 @@ blog
 | GO            | 1.19  |
 | MySQL         | 5.7   |
 | Redis         | 5.0.7 |
-| Elasticsearch | 7.9.2 |
-| RabbitMQ      | 3.8.5 |
 
 ## 项目截图
 
